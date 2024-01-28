@@ -1,0 +1,19 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: hello-world-node-app 
+spec:
+  replicas: 3 
+  selector: 
+    matchLabels: 
+      app: hello-world-node-app 
+  template: 
+    metadata: 
+      labels: 
+        app: hello-world-node-app 
+    spec: 
+      containers: 
+      - image: tteland/hello-world-node-app:v1 
+        name: hello-world-node-container 
+        ports: 
+        - containerPort: 3000
